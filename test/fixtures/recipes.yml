@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  serves: 1
+  ingredients: MyText
+  made_by: MyString
+  last_made: 2013-02-28 01:29:39
+  image: MyString
+
+two:
+  name: MyString
+  serves: 1
+  ingredients: MyText
+  made_by: MyString
+  last_made: 2013-02-28 01:29:39
+  image: MyString

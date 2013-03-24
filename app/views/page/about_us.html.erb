@@ -1,0 +1,55 @@
+<%	 content_for :title do %>
+    About us
+<% end  %>
+<h1 xmlns="http://www.w3.org/1999/html">Ask a Question</h1>
+
+<%= form_tag do %>
+    <%= field_set_tag 'Information' do %>
+
+        <p>
+          <%= label_tag "Name" %>
+          <%= text_field_tag 'nazwisko', @nazwisko, :placeholder => 'Enter search term', :class => 'input', :size => 50, :required => 'required'  %>
+
+        </p>
+
+        <p>
+          <%= label_tag "Age" %>
+          <%= number_field_tag 'age', @age,
+                               :min => 12, :max => 67, :size => 50 %> <br/>
+        </p>
+
+        <p>
+          <%= label_tag "Email Address" %>
+          <%= email_field_tag 'email', @email	  %> <br/>
+        </p>
+
+        <p>
+          <%= label_tag "select" %>
+          <%#= select( "payment", "id", { "Visa" => "1", "Mastercard" => "2"}) %> <br/>
+          <%= select_tag "payment", options_for_select(@cosiki), :multiple => true, :size => 2 %>
+          <%#= select_tag 'payment[]', options_for_select(@payments), :multiple => true, :size => 3 %>
+        </p>
+        <br/>
+        <%=	 select_tag "produkty", options_for_select(@products.map{|value| [value, value]}, @selected_product) %>
+        <br/>
+        <%=	 select_tag "produkty2", options_for_select(@products, @selected_product2) %>   <!--może być params[:produkty2] -->
+
+        <br/>
+        <h2>Co chcesz</h2>
+        <%= label_tag :food_salad, "Salad" %>
+        <%= radio_button_tag(:food, :salad, @food == "salad") %>   <br/>
+        <%= label_tag :food_main, "Main" %>
+        <%= radio_button_tag :food, :main, @food == "main"  %>   <br/>
+        <%= label_tag :food_dessert, "Dessert" %>
+        <%= radio_button_tag :food, :dessert, @food == "dessert"  %>   <br/>
+
+        <%= submit_tag 'Submit the question' %>
+    <% end %>
+
+<% end %>
+
+<%= @products.inspect %>
+<% if params[:commit]%>
+    <%=  show_params()	  %>
+<% end %>
+

@@ -1,0 +1,11 @@
+<div class="menu">
+  <ul>
+    <li><%= link_to_unless_current( "Home", page_home_path, :confirm => "question?", :alt => "About N" ) %></li>
+    <li><%= link_to_unless_current( "About", page_about_us_path ) %></li>
+    <li><%= link_to_unless_current( "Recipes", page_recipes_path ) %></li>
+    <li><%= link_to_unless_current( "Articles", page_articles_path ) %></li>
+    <li><%= link_to_unless_current( "Calendar", calendar_path ) %></li>
+    <li><%= link_to_unless_current( "Blog", page_blog_path ) %></li>
+    <li><%= link_to_unless_current( "Login", page_login_path ) %></li>
+  </ul>
+</div>
